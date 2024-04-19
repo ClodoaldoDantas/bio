@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+:root {
+  //  Colors
+  --zinc-900: #18181b;
+  --zinc-50: #fafafa;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+
+  background-color: var(--zinc-900);
+  color: var(--zinc-50);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
