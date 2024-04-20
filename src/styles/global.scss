@@ -7,19 +7,25 @@
 
 :root {
   //  Colors
-  --zinc-900: #18181b;
-  --zinc-50: #fafafa;
+  --background: #fafafa;
+  --text: #18181b;
 
-  --violet-600: #7c3aed;
-  --violet-700: #6d28d9;
+  --action: #7c3aed;
+  --action-hover: #6d28d9;
+  --white: #fff;
+}
+
+html[data-theme="dark"] {
+  --background: #18181b;
+  --text: #fafafa;
 }
 
 body {
   font-family: "Rubik", sans-serif;
   line-height: 1.5;
 
-  background-color: var(--zinc-900);
-  color: var(--zinc-50);
+  background-color: var(--background);
+  color: var(--text);
 }
 
 img,
