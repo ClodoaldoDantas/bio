@@ -1,12 +1,14 @@
 ---
 interface Props {
   href: string;
+  icon: string;
 }
 
-const { href } = Astro.props;
+const { href, icon } = Astro.props;
 ---
 
 <a class="link" href={href} target="_blank" rel="noopener noreferrer">
+  <img src={icon} />
   <slot />
 </a>
 
@@ -25,11 +27,16 @@ const { href } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 
     transition: all 0.2s;
 
     &:hover {
       background-color: var(--violet-700);
+    }
+
+    img {
+      filter: brightness(0) invert(1);
     }
   }
 </style>

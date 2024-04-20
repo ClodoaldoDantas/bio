@@ -11,7 +11,13 @@ import { links } from "../data/links";
     <Header />
 
     <div class="grid">
-      {links.map((link) => <Link href={link.url}>{link.label}</Link>)}
+      {
+        links.map((link) => (
+          <Link href={link.url} icon={link.icon}>
+            {link.label}
+          </Link>
+        ))
+      }
     </div>
   </main>
 
