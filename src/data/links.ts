@@ -11,4 +11,8 @@ export const links = [
     label: "Instagram",
     url: "https://www.instagram.com/clodoaldodantas8/",
   },
+  {
+    label: "Portfólio",
+    url: "https://www.clodoaldodantas.com.br/",
+  },
 ];
