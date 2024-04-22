@@ -32,12 +32,19 @@ const getTheme = (): Theme => {
 
 watch(switchState, (value) => {
   const newTheme = value ? "dark" : "light";
+
+  if (theme.value === newTheme) {
+    return;
+  }
+
   setTheme(newTheme);
 });
 
 onMounted(() => {
   const theme = getTheme();
+
   setTheme(theme);
+  switchState.value = theme === "dark";
 });
 </script>
 
