@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import { SwitchRoot, SwitchThumb } from "radix-vue";
+import { onMounted, ref, watch } from "vue";
 
 type Theme = "light" | "dark";
 
+const switchState = ref(false);
 const theme = ref<Theme>("light");
 const storageKey = "clodoaldobio:theme";
 
@@ -28,6 +30,11 @@ const getTheme = (): Theme => {
   return theme;
 };
 
+watch(switchState, (value) => {
+  const newTheme = value ? "dark" : "light";
+  setTheme(newTheme);
+});
+
 onMounted(() => {
   const theme = getTheme();
   setTheme(theme);
@@ -35,19 +42,54 @@ onMounted(() => {
 </script>
 
 <template>
-  <button v-if="theme === 'dark'" type="button" @click="setTheme('light')">
-    🌞 Tema Claro
-  </button>
+  <div class="mode-toggle-wrapper">
+    <span>☀️ Light</span>
 
-  <button v-else type="button" @click="setTheme('dark')">🌚 Tema Escuro</button>
+    <SwitchRoot v-model:checked="switchState" class="switch-root">
+      <SwitchThumb class="switch-thumb" />
+    </SwitchRoot>
+
+    <span>🌙 Dark</span>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-button {
-  background-color: transparent;
-  border: 0;
+<style lang="scss">
+.mode-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
-  font-size: 1.125rem;
-  color: var(--text);
+  & > span {
+    color: var(--text);
+  }
+}
+
+.switch-root {
+  all: unset;
+  width: 42px;
+  height: 25px;
+  background-color: #9ca3af;
+  border-radius: 9999px;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.switch-root[data-state="checked"] {
+  background-color: var(--action);
+}
+
+.switch-thumb {
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-color: white;
+  border-radius: 9999px;
+  transition: transform 100ms;
+  transform: translateX(2px);
+  will-change: transform;
+}
+
+.switch-thumb[data-state="checked"] {
+  transform: translateX(19px);
 }
 </style>
