@@ -7,6 +7,7 @@
 
 - Astro
 - Typescript
+- Vue
 - Sass
 
 ### 💻 Como executar o projeto
