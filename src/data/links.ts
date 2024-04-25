@@ -10,13 +10,13 @@ export const links = [
     url: "https://www.linkedin.com/in/clodoaldodantas/",
   },
   {
-    icon: "/bio/icons/instagram.svg",
-    label: "Instagram",
-    url: "https://www.instagram.com/clodoaldodantas8/",
-  },
-  {
     icon: "/bio/icons/coffee.svg",
     label: "Portfólio",
     url: "https://www.clodoaldodantas.com.br/",
+  },
+  {
+    icon: "/bio/icons/save.svg",
+    label: "Blog",
+    url: "https://clodoaldodantas.github.io/blog/",
   },
 ];
