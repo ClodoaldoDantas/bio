@@ -14,9 +14,4 @@ export const links = [
     label: "Portfólio",
     url: "https://www.clodoaldodantas.com.br/",
   },
-  {
-    icon: "/bio/icons/save.svg",
-    label: "Blog",
-    url: "https://clodoaldodantas.github.io/blog/",
-  },
 ];
